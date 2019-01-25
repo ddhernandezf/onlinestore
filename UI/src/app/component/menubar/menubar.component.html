@@ -1,0 +1,34 @@
+<div class="Menu" [ngClass]="{'Open': Show}" >
+  <div id="mySidenav" class="Wrapper" [ngClass]="{'Open': Show}" >
+    <div class="Header">
+      <button (click)="handleMenu(false)" class="Close">&times;</button>
+      <img src="../../../assets/images/EnterpriseLogo.png">
+      <div class="UserInfo">
+        <div class="Salute">Bienvenido: {{LoggedUser.Firstname}}</div>
+        <div class="Email">{{LoggedUser.Email}}</div>
+        <div class="Store">{{LoggedUser.Store.Name}}</div>
+        <div class="Student">
+          <span class="Title">Estudiante:</span>
+          <span *ngIf="LoggedUser.Childs.length === 1"  class="Name">{{SelectedChild.Firstname + ' ' + SelectedChild.Lastname}}</span>
+          <select *ngIf="LoggedUser.Childs.length > 1" [(ngModel)]=SelectedChild (ngModelChange)=ChangeChild()>
+            <option [ngValue]="child" *ngFor="let child of LoggedUser.Childs">
+              {{child.Firstname + ' ' + child.Lastname}}
+            </option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <button class="Item"(click)="addingKid()" >
+      <img src="../../../assets/images/Childs.png">
+      <span>Agregar Estudiante</span>
+    </button>
+    <button class="Item"(click)="CallSaleRequest()" >
+      <img src="../../../assets/images/BuyCart.png">
+      <span>Historial de compras</span>
+    </button>
+    <button class="Item" (click)="LogOut()">
+      <img src="../../../assets/images/Logout.png">
+      <span>Cerrar Sesión</span>
+    </button>
+  </div>
+</div>

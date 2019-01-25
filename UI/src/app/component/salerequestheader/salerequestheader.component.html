@@ -1,0 +1,48 @@
+<div class="ItemWrapper">
+    <div class="Header" (click)="HandleShow(!Show)" [ngClass]="{'Selected': Show === true}" >
+        <div class="Date">
+            {{HeaderItem.SaleDate | date: 'dd/MM/yyyy HH:mm:ss'}}
+            |
+            {{HeaderItem.CreditCardName}}
+        </div>
+        <div class="Ammount">
+            Q {{HeaderItem.Total}}
+        </div>
+        <div class="Action">
+            <button *ngIf="Show === false" >+</button>
+            <button *ngIf="Show === true" >-</button>
+        </div>
+    </div>
+    <div class="Content" [ngClass]="{'Selected': Show === true}" >
+        <div class="Center">
+            <div class="Wrapper">
+                <div class="Row">
+                    {{HeaderItem.CorporationName}} /
+                    {{HeaderItem.EnterpriseName}} /
+                    {{HeaderItem.StoreName}}
+                </div>
+                <div class="Row">Estado: {{HeaderItem.StatusName}}</div>
+                <div class="InfoBlock">
+                    <div class="Title">Información de tarjeta</div>
+                    <div class="DataWrapper">
+                        <div><strong>Entidad emisora: </strong>{{HeaderItem.CreditCardName}}</div>
+                        <div><strong>Tarjeta nombre: </strong>{{HeaderItem.CardName}}</div>
+                        <div><strong>No. Transacción: </strong>{{HeaderItem.TransactionNumber}}</div>
+                        <div><strong>No. Autorización: </strong>{{HeaderItem.AuthorizationNumber}}</div>
+                    </div>
+                </div>
+                <div class="InfoBlock">
+                    <div class="Title">Información de facturación y entrega</div>
+                    <div class="DataWrapper">
+                        <div><strong>Nombre: </strong>{{HeaderItem.CustomerName}}</div>
+                        <div><strong>NIT: </strong>{{HeaderItem.TaxNumber}}</div>
+                        <div><strong>Dirección: </strong>{{HeaderItem.Address}}</div>
+                    </div>
+                </div>
+                <div class="TableWrapper">
+                    <app-request-detail [Data]=Detail></app-request-detail>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

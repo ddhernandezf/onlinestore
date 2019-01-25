@@ -1,0 +1,20 @@
+.SaleWrapper{
+    display: inline-block;
+    width: 100%;
+    max-height: 400px;
+    overflow-y: auto;
+    padding: 5px;
+}
+
+@media only screen and (min-width: 400px){}
+
+/*@media only screen and (max-width: 768px) and (orientation: landscpae){*/
+@media only screen and (min-width: 1000px){
+    .SaleWrapper{
+        display: inline-block;
+        width: 600px;
+        max-height: 400px;
+        overflow-y: auto;
+        padding: 5px;
+    }   
+}

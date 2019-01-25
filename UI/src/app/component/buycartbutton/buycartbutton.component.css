@@ -1,0 +1,59 @@
+.BuyButton{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  height: 35px;
+  border: solid 1px #666666;
+  width: 100%
+}
+
+.BuyButton:hover{
+  background-color: #306E9F;
+  cursor: pointer;
+  border: none;
+}
+
+.BuyButton > img{
+  width: 45px;
+  height: 30px;
+  padding: 0px 5px;
+}
+
+.BuyButton > span {
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+@media only screen and (min-width: 400px){}
+
+/*@media only screen and (max-width: 768px) and (orientation: landscpae){*/
+@media only screen and (min-width: 1000px){
+  .BuyButton{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    height: 35px;
+    border: solid 1px #666666;
+  }
+  
+  .BuyButton:hover{
+    background-color: #306E9F;
+    cursor: pointer;
+    border: none;
+  }
+  
+  .BuyButton > img{
+    width: 45px;
+    height: 30px;
+    padding: 0px 5px;
+  }
+  
+  .BuyButton > span {
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
+  }
+}

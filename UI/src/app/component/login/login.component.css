@@ -1,0 +1,193 @@
+.LoginBox{
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    background: linear-gradient(rgba(255,255,255,.7), rgba(255,255,255,.7)), url("../../../assets/images/LoginBackground.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.LoginBox>.Header{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    border-bottom: solid 1px;
+    background: rgba(51, 51, 51, .8);
+    color: white;
+    font-weight: bolder;
+}
+
+.LoginBox>.Header > .ApplicationName{
+    display: table-cell;
+    float: left;
+    width: 65%;
+    padding: 5px;
+}
+
+.LoginBox>.Header > img{
+    width: 35%;
+    float: left;
+    padding: 0px 15px;
+}
+
+.LoginBox>.Body{
+    display: inline-block;
+    width: 100%;
+    padding: 20px 0px;
+}
+
+.LoginBox>.Body>form{
+    display: inline-block;
+    position: relative;
+    width: 100%;
+}
+
+.LoginBox input[type="text"].HintField,
+.LoginBox input[type="password"].HintField,
+.LoginBox input[type="number"].HintField,
+.LoginBox input[type="email"].HintField{
+    background-color: #ffffff;
+    border: none;
+}
+
+.LoginBox input[type="text"].HasError,
+.LoginBox input[type="password"].HasError,
+.LoginBox input[type="email"].HasError,
+.LoginBox input[type="number"].HasError{
+    border: solid 2px rgb(204, 0, 0) !important;
+    color: rgb(204, 0, 0);
+}
+
+.LoginBox input[type="text"]:focus,
+.LoginBox input[type="password"]:focus{
+    border: solid 2px rgba(51, 51, 51, .8);
+    outline: none;
+}
+
+.LoginBox button{
+    color: #ffffff;
+    background: rgba(51, 51, 51, .8);
+    border: none;
+    margin: 5px;
+    padding: 10px 15px;
+}
+
+.LoginBox button:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.LoginBox a{
+    text-decoration: none;
+    color: #000000;
+}
+
+.LoginBox a:hover{
+    text-decoration: underline;
+}
+
+.LoginBox .Register{
+    display: inline-block;
+    width: 100%;
+    text-align: right;
+    font-size: 16px;
+    font-weight: bold;
+    padding-right: 10px;
+}
+
+.LoginBox .GeneralError{
+    color: rgb(204, 0, 0);
+    text-align: center;
+}
+
+/********************AllInCenter********************/
+.AllInCenter{
+    display: table;
+    width: inherit;
+    height: inherit;
+}
+
+.AllInCenter.GrayBackground{
+    background: rgba(242, 242, 242, 0.5);
+}
+
+.AllInCenter > .Wrapper{
+    display: table-cell;
+    width: inherit;
+    height: inherit;
+    vertical-align: middle;
+    text-align: center;
+}
+/********************AllInCenter********************/
+
+@media only screen and (min-width: 400px){
+    .LoginBox{
+        width: 400px;
+        margin: 0 auto;
+    }
+    
+    .LoginBox>.Header > .ApplicationName{
+        width: 70%;
+        padding: 5px;
+    }
+    
+    .LoginBox>.Header > img{
+        width: 30%;
+        padding: 0px 15px;
+    }
+    
+    .LoginBox>.Body{
+        width: 100%;
+    }
+    
+    .LoginBox>.Body>form{
+        width: 90%;
+        margin: 0 auto;
+    }
+    
+    /*.LoginBox button{
+        margin: 5px;
+        padding: 10px 15px;
+    }
+    
+    .LoginBox .Register{
+        padding: 0;
+    }*/
+}
+
+/*@media only screen and (max-width: 768px) and (orientation: landscpae){*/
+@media only screen and (min-width: 1000px){
+    .LoginBox{
+        width: 500px;
+        margin: 0 auto;
+    }
+    
+    .LoginBox>.Header > .ApplicationName{
+        width: 75%;
+        padding: 5px;
+    }
+    
+    .LoginBox>.Header > img{
+        width: 25%;
+        padding: 0px 15px;
+    }
+    
+    .LoginBox>.Body{
+        width: 100%;
+        padding: 20px;
+    }
+    
+    .LoginBox>.Body>form{
+        width: 75%;
+        margin: 0 auto;
+    }
+    
+    .LoginBox button{
+        margin: 5px;
+        padding: 10px 15px;
+    }
+    
+    .LoginBox .Register{
+        padding: 0;
+    }
+}

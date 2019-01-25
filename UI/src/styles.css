@@ -1,0 +1,307 @@
+@font-face {
+    font-family: 'CircularStd-Book';
+    src: url("assets/fonts/CircularStd-Book.otf");
+}
+
+*{
+    box-sizing: border-box;
+}
+
+html,
+body{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'CircularStd-Book';
+    overflow: hidden;
+}
+
+header {
+    display: inline-block;
+    width: 100%;
+    height: 10%;
+    background: rgba(51, 51, 51, .8);
+    padding: 5px;
+    color: #ffffff;
+}
+
+.body {
+    display: inline-block;
+    width: 100%;
+    height: 90%;
+    overflow: auto;
+  }
+  
+  .Center{
+    display: table;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .Center > .Wrapper{
+    display: table-cell;
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
+  }
+
+app-root,
+app-login,
+app-register,
+app-store{
+    width: inherit;
+    height: inherit;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="number"],
+input[type="email"] {
+    width: 100%;
+    height: 40px;
+    padding: 0;
+    margin: 0;
+    border: solid 1px;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button{
+    -webkit-appearance: none;
+}
+
+input[type="text"].HintField,
+input[type="password"].HintField,
+input[type="number"].HintField,
+input[type="email"].HintField{
+    background-size: 20px !important;
+    background-position: 5px !important;
+    background-repeat: no-repeat !important;
+    padding-left: 30px !important;
+}
+
+input[type="text"].Corporation,
+input[type="number"].Corporation{
+    background: url("assets/images/Company.png");
+}
+
+input[type="text"].Enterprise,
+input[type="number"].Enterprise{
+    background: url("assets/images/Enterprise.png");
+}
+
+input[type="text"].Store,
+input[type="number"].Store{
+    background: url("assets/images/WareHouse.png");
+}
+
+input[type="text"].Student,
+input[type="number"].Student{
+    background: url("assets/images/ChildrensName.png");
+}
+
+input[type="text"].Grade,
+input[type="number"].Grade {
+    background: url("assets/images/Grade.png");
+}
+
+input[type="text"].Firstname{
+    background: url("assets/images/ParentsName.png");
+}
+
+input[type="text"].Lastaname{
+    background: url("assets/images/ParentsName.png");
+}
+
+input[type="text"].Address{
+    background: url("assets/images/Address.png");
+}
+
+input[type="text"].Telephone,
+input[type="number"].Telephone{
+    background: url("assets/images/Telephone.png");
+}
+
+input[type="text"].LoginUser,
+input[type="email"].LoginUser{
+    background: url("assets/images/UserHint.png");
+}
+
+input[type="password"].LoginPassword{
+    background: url("assets/images/PasswordHint.png");
+}
+
+input[type="number"].CreditVerify{
+    float: left;
+    width: 78px;
+    margin: 0px 5px;
+    background: url("assets/images/PasswordHint.png");
+}
+
+input[type="number"].Date{
+    float: left;
+    width: 78px;
+    margin: 0px 5px;
+    background: url("assets/images/Calendar.png");
+}
+
+input[type="number"].CreditCard{
+    background: url("assets/images/Payment.png");
+}
+
+input[type="text"].Tax{
+    background: url("assets/images/Tax.png");
+}
+
+/********************AllInCenter********************/
+.AllInCenter,
+.AllInCenter > .Wrapper{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.AllInCenter.GrayBackground{
+    background: rgba(242, 242, 242, 0.5);
+}
+/********************AllInCenter********************/
+
+/**********************Columns**********************/
+[class*="col-"].Field{
+    padding: 5px 10px;
+}
+
+[class*="col-"].Title{
+    padding: 5px 0px 20px 0px;
+    font-size: 15px;
+    font-weight: bold;
+    color: #333333;
+}
+
+[class*="col-"].Field>.Error,
+[class*="col-"].Label>.Error,
+[class*="col-"].Field>[class*="col-"]>.Error{
+    text-align: right;
+    padding-right: 5px;
+    color: rgb(204, 0, 0);
+    padding-top: 2px;
+}
+
+[class*="col-"].Label>.Error{
+    text-align: left !important;
+    margin: 7px 10px;
+    font-size: 13px;
+    font-weight: bolder;
+}
+
+[class*="col-"].Field>.Label > span
+[class*="col-"].Field>.Error > span{
+    width: 100%;
+}
+
+[class*="col-"].ButtonPanel{
+    padding: 10px;
+    margin-top: 10px;
+    height: 25%;
+    text-align: center;
+}
+
+[class*="col-"] {
+    float: left;
+    width: 100%;
+}
+/**********************Columns**********************/
+
+@media only screen and (min-width: 400px){
+
+}
+
+/*@media only screen and (max-width: 768px) and (orientation: landscpae){*/
+@media only screen and (min-width: 1000px){
+    input[type="text"],
+    input[type="password"],
+    input[type="number"],
+    input[type="email"] {
+        width: 100%;
+        height: 30px;
+        padding: 0;
+        margin: 0;
+        border: solid 1px;
+    }
+
+    /********************AllInCenter********************/
+    .AllInCenter{
+        display: table;
+        width: inherit;
+        height: inherit;
+    }
+
+    .AllInCenter.GrayBackground{
+        background: rgba(242, 242, 242, 0.5);
+    }
+
+    .AllInCenter > .Wrapper{
+        display: table-cell;
+        width: inherit;
+        height: inherit;
+        vertical-align: middle;
+        text-align: center;
+    }
+    /********************AllInCenter********************/
+
+    /**********************Columns**********************/
+    [class*="col-"].ButtonPanel{
+        padding: 10px;
+        margin-top: 10px;
+    }
+
+    .col-1 {
+        width: 8.33%;
+    }
+
+    .col-2 {
+        width: 16.66%;
+    }
+
+    .col-3 {
+        width: 25%;
+    }
+
+    .col-4 {
+        width: 33.33%;
+    }
+
+    .col-5 {
+        width: 41.66%;
+    }
+
+    .col-6 {
+        width: 50%;
+    }
+
+    .col-7 {
+        width: 58.33%;
+    }
+    848px
+    .col-8 {
+        width: 66.66%;
+    }
+
+    .col-9 {
+        width: 75%;
+    }
+
+    .col-10 {
+        width: 83.33%;
+    }
+
+    .col-11 {
+        width: 91.66%;
+    }
+
+    .col-12 {
+        width: 100%;
+    }
+    /**********************Columns**********************/
+}

@@ -1,0 +1,6 @@
+<div class="ItemList">
+    <app-item *ngFor="let product of Products"
+      [Product]=product
+      (CallAction)=SelectedProduct($event)
+      (AddProductToCart)=AddToCart($event) ></app-item>
+</div>

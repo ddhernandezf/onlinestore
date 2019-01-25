@@ -1,0 +1,18 @@
+<table>
+    <thead>
+        <tr>
+            <td width="12%">Cantidad</td>
+            <td width="48%">Producto</td>
+            <td width="20%">Precio</td>
+            <td width="20%">Total</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let product of Data" >
+            <td>{{product.Quantity}}</td>
+            <td class="Product">{{product.ProductName}}</td>
+            <td>Q {{product.SubTotal}}</td>
+            <td>Q {{(product.Quantity * product.SubTotal)|number: '1.2-2'}}</td>
+        </tr>
+    </tbody>
+</table>

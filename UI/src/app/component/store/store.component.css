@@ -1,0 +1,449 @@
+.HeaderContent{
+  width: 100%;
+  float: left;
+  display: table;
+  height: 100%;
+}
+
+.HeaderLeft,
+.HeaderRight,
+.HeaderCenter{
+  float: left;
+  text-align: center;
+}
+
+.HeaderLeft{
+  width: 13%;
+}
+
+.HeaderRight{
+  width: 20%;
+}
+
+.HeaderCenter{
+  min-width: 67%;
+  max-width: 67%;
+  overflow: hidden;
+}
+
+.ProductBrowser{
+  display: inline-block;
+  width: 100%;
+}
+
+.ProductBrowser > input[type="text"]{
+  background: #666666;
+  color: #ffffff;
+  font-size: 12px;
+  width: 69%;
+  height: 20px;
+  border: none;
+  margin: 0;
+  margin-left: 7px;
+  padding: 0px 10px;
+  float: left;
+}
+
+.ProductBrowser > button{
+  background: #666666;
+  border: none;
+  padding: 5px 25px;
+  margin: 0;
+  height: 35px;
+  float: left;
+}
+
+.ProductBrowser > button:hover{
+  cursor: pointer;
+  background-color: #306E9F;
+}
+
+.ProductBrowser > button > img{
+  height: 100%;
+}
+
+.ButtonMenu{
+  display: flex;
+  align-items: center;
+  height: 35px;
+  width: 40px;
+  border: solid 1px #666666;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.ButtonMenu:hover{
+  background-color: #306E9F;
+  cursor: pointer;
+}
+
+.ButtonMenu > span{
+  font-size: 10px;
+  padding-left: 5px;
+}
+
+.ButtonMenu > img{
+  display: none;
+}
+
+.TypeButton {
+  height: auto !important;
+  background: none !important;
+  margin-bottom: 5px !important;
+  width: 100% !important;
+  text-align: center;
+}
+
+.TypeButton > span{
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  height: auto !important;
+  padding: 5px !important;
+  border: solid 1px #ffffff !important;
+  border-radius: 5px;
+  background: #666666 !important;
+}
+
+.TypeButton > button {
+  float: left;
+  margin: 0;
+  color: #ffffff;
+  background: none;
+  border: none;
+  font-size: 18px;
+  padding: 0px 5px;
+  margin-right: 5px;
+  font-weight: bold;
+  border-bottom: solid transparent 2px;
+}
+
+.TypeButton > button:hover {
+  border-bottom: solid #ffffff 2px;
+  cursor: pointer;
+}
+
+.SearchButton{
+  border-left: solid 1px #ffffff !important;
+  height: 20px !important;
+  width: 20% !important;
+}
+
+.BuyButton{
+  display: inline-block;
+  border: none;
+  background: none;
+  height: 35px;
+  border: solid 1px #666666;
+}
+
+.BuyButton:hover{
+  background-color: #306E9F;
+  cursor: pointer;
+  border: none;
+}
+
+.BuyButton > img{
+  height: 100%;
+  padding: 0px 5px;
+}
+
+@media only screen and (min-width: 400px){}
+
+/*@media only screen and (max-width: 768px) and (orientation: landscpae){*/
+@media only screen and (min-width: 1000px){
+  .HeaderContent{
+    width: 100%;
+    float: left;
+    display: table;
+    height: 100%;
+  }
+  
+  .HeaderLeft,
+  .HeaderRight,
+  .HeaderCenter{
+    float: left;
+    text-align: center;
+  }
+  
+  .HeaderLeft{
+    width: 20%;
+  }
+  .HeaderRight{
+    width: 10%;
+  }
+  
+  .HeaderCenter{
+    width: 70%;
+  }
+  
+  .ProductBrowser{
+    display: inline-block !important;
+    width: auto;
+  }
+  
+  .ProductBrowser > input[type="text"]{
+    background: #666666;
+    color: #ffffff;
+    font-size: 16px;
+    width: 350px;
+    height: 35px;
+    border: none;
+    margin: 0;
+    padding: 0px 10px;
+    float: left;
+    border-left: solid 1px #ffffff !important;
+    border-right: solid 1px #ffffff !important;
+  }
+  
+  .ProductBrowser > button{
+    background: #666666 !important;
+    border: none !important;
+    padding: 5px 25px !important;
+    margin: 0 !important;
+    height: 35px !important;
+    float: left !important;
+  }
+  
+  .ProductBrowser > button:hover{
+    cursor: pointer;
+    background-color: #306E9F;
+  }
+  
+  .ProductBrowser > button > img{
+    height: 100%;
+  }
+  
+  .ButtonMenu{
+    display: flex;
+    align-items: center;
+    height: 35px;
+    width: 120px;
+    padding: 0px 10px;
+    border: solid 1px #666666;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .ButtonMenu:hover{
+    background-color: #306E9F;
+    cursor: pointer;
+  }
+  
+  .ButtonMenu > span{
+    padding: 0px 5px;
+    font-size: inherit;
+  }
+  
+  .ButtonMenu > img{
+    height: 100%;
+    display: block;
+  }
+  
+  .TypeButton {
+    background-color: #666666 !important;
+    color: white;
+    padding: 0px 25px !important;
+    font-size: 16px;
+    font-weight: bold;
+    border: none !important;
+    height: 35px !important;
+    border-radius: none;
+    border-top-left-radius: 5px !important;
+    border-bottom-left-radius: 5px !important;
+    width: auto !important;
+  }
+
+  .TypeButton > span{
+    font-size: inherit;
+    border: inherit !important;
+  }
+  
+  .TypeButton > button {
+    float: left;
+    margin: 0;
+    color: #ffffff;
+    background: none;
+    border: none;
+    font-size: 18px;
+    padding: 0px 5px;
+    margin-right: 5px;
+    font-weight: bold;
+    border-bottom: solid transparent 2px;
+  }
+  
+  .TypeButton > button:hover {
+    border-bottom: solid #ffffff 2px;
+    cursor: pointer;
+  }
+  
+  .SearchButton{
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    width: 14% !important;
+  }
+  
+  .BuyButton{
+    display: inline-block;
+    border: none;
+    background: none;
+    height: 35px;
+    border: solid 1px #666666;
+  }
+  
+  .BuyButton:hover{
+    background-color: #306E9F;
+    cursor: pointer;
+    border: none;
+  }
+  
+  .BuyButton > img{
+    height: 100%;
+    padding: 0px 5px;
+  }
+  
+  @media only screen and (min-width: 400px){
+    .HeaderContent{
+      width: 100%;
+      float: left;
+      display: table;
+      height: 100%;
+    }
+    
+    .HeaderLeft,
+    .HeaderRight,
+    .HeaderCenter{
+      float: left;
+      text-align: center;
+    }
+    
+    .HeaderLeft{
+      width: 20%;
+    }
+    .HeaderRight{
+      width: 10%;
+    }
+    
+    .HeaderCenter{
+      width: 70%;
+    }
+    
+    .ProductBrowser{
+      display: inline-block;
+    }
+    
+    .ProductBrowser > input[type="text"]{
+      background: #666666;
+      color: #ffffff;
+      font-size: 16px;
+      width: 350px;
+      height: 35px;
+      border: none;
+      margin: 0;
+      padding: 0px 10px;
+      float: left;
+    }
+    
+    .ProductBrowser > button{
+      background: #666666;
+      border: none;
+      padding: 5px 25px;
+      margin: 0;
+      height: 35px;
+      float: left;
+    }
+    
+    .ProductBrowser > button:hover{
+      cursor: pointer;
+      background-color: #306E9F;
+    }
+    
+    .ProductBrowser > button > img{
+      height: 100%;
+    }
+    
+    .ButtonMenu{
+      display: flex;
+      align-items: center;
+      height: 35px;
+      width: 120px;
+      padding: 0px 10px;
+      border: solid 1px #666666;
+      border-radius: 5px;
+      font-size: 16px;
+      font-weight: bold;
+    }
+    
+    .ButtonMenu:hover{
+      background-color: #306E9F;
+      cursor: pointer;
+    }
+    
+    .ButtonMenu > span{
+      padding: 0px 5px;
+    }
+    
+    .ButtonMenu > img{
+      height: 100%;
+    }
+    
+    .TypeButton {
+      background-color: #666666;
+      color: white;
+      padding: 0px 25px;
+      font-size: 16px;
+      font-weight: bold;
+      border: none;
+      height: 35px;
+      border-right: solid 1px #ffffff !important;
+      border-radius: none;
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+    }
+    
+    .TypeButton > button {
+      float: left;
+      margin: 0;
+      color: #ffffff;
+      background: none;
+      border: none;
+      font-size: 18px;
+      padding: 0px 5px;
+      margin-right: 5px;
+      font-weight: bold;
+      border-bottom: solid transparent 2px;
+    }
+    
+    .TypeButton > button:hover {
+      border-bottom: solid #ffffff 2px;
+      cursor: pointer;
+    }
+    
+    .SearchButton{
+      border-left: solid 1px #ffffff !important;
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+    }
+    
+    .BuyButton{
+      display: inline-block;
+      border: none;
+      background: none;
+      height: 35px;
+      border: solid 1px #666666;
+    }
+    
+    .BuyButton:hover{
+      background-color: #306E9F;
+      cursor: pointer;
+      border: none;
+    }
+    
+    .BuyButton > img{
+      height: 100%;
+      padding: 0px 5px;
+    }
+  }
+}

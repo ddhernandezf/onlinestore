@@ -1,0 +1,187 @@
+<div class="AllInCenter GrayBackground">
+    <div class="Wrapper">
+        <div class="RegisterBox">
+            <div class="Header">
+                <img src="assets/images/EnterpriseLogo.png">
+                <span class="ApplicationName">Registro de nuevo usuario</span>
+            </div>
+            <div class="Body">
+                <form [formGroup]="RegisterForm" (ngSubmit)="Submit()">
+                    <div class="FieldWrapper">
+                        <div class="col-12 Field">
+                            <div class="col-4">
+                                <input type="number"
+                                    formControlName="Corporation"
+                                    class="HintField Corporation"
+                                    [ngClass]="{ 'HasError': Submitted && f.Corporation.errors }"
+                                    (blur)="GetData(Crud.Corporation)"
+                                    placeholder="Corporación">
+                                <div *ngIf="Submitted && f.Corporation.errors" class="Error">
+                                    <span *ngIf="f.Corporation.errors.required">*</span>
+                                </div>
+                            </div>
+                            <div class="col-8 Label">
+                                <label>{{Model.Corporation.Name}}</label>
+                                <div *ngIf="ErrorModel.Corporation != null" class="Error">
+                                    <span>{{ErrorModel.Corporation}}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 Field">
+                            <div class="col-4">
+                                <input type="number"
+                                    formControlName="Enterprise"
+                                    class="HintField Enterprise"
+                                    [ngClass]="{ 'HasError': Submitted && f.Enterprise.errors }"
+                                    (blur)="GetData(Crud.Enterprise)"
+                                    placeholder="Empresa">
+                                <div *ngIf="Submitted && f.Enterprise.errors" class="Error">
+                                    <span *ngIf="f.Enterprise.errors.required">*</span>
+                                </div>
+                            </div>
+                            <div class="col-8 Label">
+                                <label>{{Model.Enterprise.Name}}</label>
+                                <div *ngIf="ErrorModel.Enterprise != null" class="Error">
+                                    <span>{{ErrorModel.Enterprise}}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 Field">
+                            <div class="col-4">
+                                <input type="number"
+                                    formControlName="Store"
+                                    class="HintField Store"
+                                    [ngClass]="{ 'HasError': Submitted && f.Store.errors }"
+                                    (blur)="GetData(Crud.Store)"
+                                    placeholder="Bodega">
+                                <div *ngIf="Submitted && f.Store.errors" class="Error">
+                                    <span *ngIf="f.Store.errors.required">*</span>
+                                </div>
+                            </div>
+                            <div class="col-8 Label">
+                                <label>{{Model.Store.Name}}</label>
+                                <div *ngIf="ErrorModel.Store != null" class="Error">
+                                    <span>{{ErrorModel.Store}}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 Field">
+                            <div class="col-4">
+                                <input type="number"
+                                    formControlName="Student"
+                                    class="HintField Student"
+                                    [ngClass]="{ 'HasError': Submitted && f.Student.errors }"
+                                    (blur)="GetData(Crud.Student)"
+                                    placeholder="Estudiante">
+                                <div *ngIf="Submitted && f.Student.errors" class="Error">
+                                    <span *ngIf="f.Student.errors.required">*</span>
+                                </div>
+                            </div>
+                            <div class="col-8 Label" *ngIf="Model.Student.Firstname != null || Model.Student.Lastname != null">
+                                <label>{{Model.Student.Firstname + ' ' + Model.Student.Lastname}}</label>
+                                <div *ngIf="ErrorModel.Student != null" class="Error">
+                                    <span>{{ErrorModel.Student}}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 Field">
+                            <input type="text"
+                                formControlName="GradeName"
+                                class="HintField Grade"
+                                [ngClass]="{ 'HasError': Submitted && f.GradeName.errors }"
+                                placeholder="Grado del estudiante">
+                            <div *ngIf="Submitted && f.GradeName.errors" class="Error">
+                                <span *ngIf="f.GradeName.errors.required">*</span>
+                            </div>
+                        </div>
+                        <div class="col-12 Field">
+                            <input type="email"
+                                formControlName="Username"
+                                class="HintField LoginUser"
+                                [ngClass]="{ 'HasError': Submitted && f.Username.errors }"
+                                placeholder="Ingrese su correo electrónico">
+                            <div *ngIf="Submitted && f.Username.errors" class="Error">
+                                <span *ngIf="f.Username.errors.required">*</span>
+                                <span *ngIf="f.Username.errors.email">Formato incorrecto</span>
+                            </div>
+                        </div>
+                        <div class="col-12 Field">
+                            <input type="password"
+                                formControlName="Password"
+                                class="HintField LoginPassword"
+                                [ngClass]="{'HasError': Submitted && f.Password.errors}"
+                                placeholder="Ingrese su contraseña">
+                            <div *ngIf="Submitted && f.Password.errors" class="Error">
+                                <span *ngIf="f.Password.errors.required">*</span>
+                                <span *ngIf="f.Password.errors.minlength">Mínimo 6 caracteres</span>
+                            </div>
+                        </div>
+                        <div class="col-12 Field">
+                            <input type="password"
+                                           formControlName="Confirmation"
+                                           class="HintField LoginPassword"
+                                           [ngClass]="{'HasError': Submitted && f.Confirmation.errors}"
+                                           placeholder="Confirmar contraseña">
+                            <div *ngIf="Submitted && f.Confirmation.errors" class="Error">
+                                        <span *ngIf="f.Confirmation.errors.required">*</span>
+                                        <span *ngIf="f.Confirmation.errors.minlength">Mínimo 6 caracteres</span>
+                            </div>
+                        </div>
+                        <div class="col-12 Field">
+                            <input type="text"
+                                formControlName="Firstname"
+                                class="HintField Firstname"
+                                [ngClass]="{ 'HasError': Submitted && f.Firstname.errors }"
+                                placeholder="Ingrese sus Nombres">
+                            <div *ngIf="Submitted && f.Firstname.errors" class="Error">
+                                <span *ngIf="f.Firstname.errors.required">*</span>
+                                <span *ngIf="f.Firstname.errors.minlength">Mínimo 2 caracteres</span>
+                                <span *ngIf="f.Firstname.errors.maxlength">Mäximo 120 caracteres</span>
+                            </div>
+                        </div>
+                        <div class="col-12 Field">
+                            <input type="text"
+                                formControlName="Lastname"
+                                class="HintField Lastaname"
+                                [ngClass]="{ 'HasError': Submitted && f.Lastname.errors }"
+                                placeholder="Ingrese sus pellidos">
+                            <div *ngIf="Submitted && f.Lastname.errors" class="Error">
+                                <span *ngIf="f.Lastname.errors.required">*</span>
+                                <span *ngIf="f.Lastname.errors.minlength">Mínimo 2 caracteres</span>
+                                <span *ngIf="f.Lastname.errors.maxlength">Mäximo 120 caracteres</span>
+                            </div>
+                        </div>
+                        <div class="col-12 Field">
+                            <input type="text"
+                                formControlName="Address"
+                                class="HintField Address"
+                                [ngClass]="{ 'HasError': Submitted && f.Address.errors }"
+                                placeholder="Ingrese su dirección">
+                            <div *ngIf="Submitted && f.Address.errors" class="Error">
+                                <span *ngIf="f.Address.errors.required">*</span>
+                                <span *ngIf="f.Address.errors.maxlength">Mäximo 250 caracteres</span>
+                            </div>
+                        </div>
+                        <div class="col-12 Field">
+                            <input type="number"
+                                formControlName="Telephone"
+                                class="HintField Telephone"
+                                [ngClass]="{ 'HasError': Submitted && f.Telephone.errors }"
+                                placeholder="Ingrese su teléfono">
+                            <div *ngIf="Submitted && f.Telephone.errors" class="Error">
+                                <span *ngIf="f.Telephone.errors.required">*</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 ButtonPanel">
+                        <br *ngIf="Properties.ErrorMessage !== null">
+                        <div class="GeneralError" *ngIf="Properties.ErrorMessage !== null">{{Properties.ErrorMessage}}</div>
+                        <button>Registrar</button>
+                        <span class="Register"><a routerLink="/IniciarSesion">Iniciar Sesión</a></span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<app-blocker [Block]=BlockView ></app-blocker>

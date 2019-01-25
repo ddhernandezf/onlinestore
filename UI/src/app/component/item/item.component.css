@@ -1,0 +1,267 @@
+.Item{
+  background: rgba(230, 230, 230, 0.85);
+  position: relative;
+  display: inline-block;
+  margin: 15px 20px;
+  width: 90%;
+  padding: 10px;
+  border: solid transparent 2px;
+  height: 400px;
+}
+
+.Item:hover{
+  border-top: solid 2px #333333;
+}
+
+.Item > .Description{
+  float: left;
+  width: 100%;
+  text-align: center;
+}
+
+.Item > .Description > .Row{
+  float: left;;
+  width: 100%;
+}
+
+.Item > .Description > .Row.Name{
+  font-size: 25px;
+  font-weight: bold;
+  line-height: 0.75;
+}
+
+.Item > .Description > .Row.Type{
+  font-size: 12px;
+  line-height: 0.9;
+}
+
+.Item > .Description > .Row:last-child{
+  border: none;
+}
+
+.Item > .Image{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 10px;
+  height: 290px;
+}
+
+.Item > .Image > img{
+  height: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.Item > .Buttons{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding-top: 5px;
+}
+
+.Item > .Buttons > div > button{
+  background: none;
+  margin: 0;
+  padding: 0;
+  border: solid transparent 2px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.Item > .Buttons > div > button:hover{
+  border-bottom: solid 2px #333333;
+  cursor: pointer;
+}
+
+.Item > .Buttons > div{
+  float: left;
+}
+
+.Item > .Buttons > div.Left{
+  width: 25%;
+}
+
+.Item > .Buttons > div.Center{
+  width: 55%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Item > .Buttons > div.Center > input[type="number"]{
+  width: 25%;
+  margin: 0px 5px;
+  background: inherit;
+  text-align: center;
+  color: rgba(51, 51, 51, .8);
+  font-weight: bold;
+  font-size: 16px;
+  border: solid 1px rgba(51, 51, 51, .8);
+  border-radius: 5px;
+  padding-top: 5px;
+}
+
+.Item > .Buttons > div.Right{
+  width: 20%
+}
+
+.Item > .Buttons > div > button > img{
+  width: 30px;
+  height: 30px;
+}
+
+.Item > .Buttons > div > a{
+  float: left;
+  width: 100%;
+  padding-bottom: 5px;
+}
+
+.Item > .Buttons > div > a:hover{
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.Item > .Buttons > div > span{
+  width: 60%;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+@media only screen and (min-width: 400px){
+}
+
+/*@media only screen and (max-width: 768px) and (orientation: landscpae){*/
+  @media only screen and (min-width: 1000px){
+    .Item{
+      background: rgba(230, 230, 230, 0.85);
+      position: relative;
+      display: inline-block;
+      margin: 15px 20px;
+      width: 20%;
+      padding: 10px;
+      border: solid transparent 2px;
+      height: 400px;
+    }
+    
+    .Item:hover{
+      border-top: solid 2px #333333;
+    }
+    
+    .Item > .Description{
+      float: left;
+      width: 100%;
+      text-align: center;
+    }
+    
+    .Item > .Description > .Row{
+      float: left;;
+      width: 100%;
+    }
+    
+    .Item > .Description > .Row.Name{
+      font-size: 25px;
+      font-weight: bold;
+      line-height: 0.75;
+    }
+    
+    .Item > .Description > .Row.Type{
+      font-size: 12px;
+      line-height: 0.9;
+    }
+    
+    .Item > .Description > .Row:last-child{
+      border: none;
+    }
+    
+    .Item > .Image{
+      display: flex;
+      align-items: center;
+      width: 100%;
+      padding: 10px;
+      height: 290px;
+    }
+    
+    .Item > .Image > img{
+      height: 100%;
+      max-width: 100%;
+      margin: 0 auto;
+    }
+    
+    .Item > .Buttons{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      padding-top: 5px;
+    }
+    
+    .Item > .Buttons > div > button{
+      background: none;
+      margin: 0;
+      padding: 0;
+      border: solid transparent 2px;
+      font-size: 16px;
+      font-weight: bold;
+    }
+    
+    .Item > .Buttons > div > button:hover{
+      border-bottom: solid 2px #333333;
+      cursor: pointer;
+    }
+    
+    .Item > .Buttons > div{
+      float: left;
+    }
+    
+    .Item > .Buttons > div.Left{
+      width: 25%;
+    }
+    
+    .Item > .Buttons > div.Center{
+      width: 55%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .Item > .Buttons > div.Center > input[type="number"]{
+      width: 25%;
+      margin: 0px 5px;
+      background: inherit;
+      text-align: center;
+      color: rgba(51, 51, 51, .8);
+      font-weight: bold;
+      font-size: 16px;
+      border: solid 1px rgba(51, 51, 51, .8);
+      border-radius: 5px;
+      padding-top: 5px;
+    }
+    
+    .Item > .Buttons > div.Right{
+      width: 20%
+    }
+    
+    .Item > .Buttons > div > button > img{
+      width: 30px;
+      height: 30px;
+    }
+    
+    .Item > .Buttons > div > a{
+      float: left;
+      width: 100%;
+      padding-bottom: 5px;
+    }
+    
+    .Item > .Buttons > div > a:hover{
+      text-decoration: underline;
+      cursor: pointer;
+    }
+    
+    .Item > .Buttons > div > span{
+      width: 60%;
+      font-size: 15px;
+      font-weight: bold;
+    }
+  }

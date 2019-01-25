@@ -1,0 +1,14 @@
+<div class="Locker" [ngClass]="{'Show': Block}" >
+  <div class="Wrapper">
+    <div class="Window">
+      <div class="Header">
+        <img src="../../../assets/images/EnterpriseLogo.png">
+        <span>{{Title}}</span>
+        <button (click)="Close()" >&times;</button>
+      </div>
+      <div class="Body">
+        <ng-content></ng-content>
+      </div>
+    </div>
+  </div>
+</div>

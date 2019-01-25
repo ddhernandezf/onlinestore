@@ -1,0 +1,76 @@
+.Wrapper{
+    background: rgba(230, 230, 230, 0.85);
+    float: left;
+    width: 45%;
+    height: 150px;
+    padding: 5px;
+    border: solid transparent 1px;
+    padding: 10px;
+    margin: 5px;
+}
+
+.Wrapper:hover{
+    border-top: solid 2px #333333;
+    cursor: pointer;
+}
+
+.Wrapper > .Image{
+    float: left;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+}
+
+.Wrapper > .Image > img{
+    width: 100%;
+    height: 50px;
+}
+
+.Wrapper > .Name{
+    width: 100%;
+    float: left;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+@media only screen and (min-width: 400px){}
+
+/*@media only screen and (max-width: 768px) and (orientation: landscpae){*/
+@media only screen and (min-width: 1000px){
+    .Wrapper{
+        background: rgba(230, 230, 230, 0.85);
+        float: left;
+        width: 22.9%;
+        height: 150px;
+        padding: 5px;
+        border: solid transparent 1px;
+        padding: 10px;
+        margin: 5px;
+    }
+    
+    .Wrapper:hover{
+        border-top: solid 2px #333333;
+        cursor: pointer;
+    }
+    
+    .Wrapper > .Image{
+        float: left;
+        width: 100%;
+        height: 100px;
+        display: flex;
+        align-items: center;
+    }
+    
+    .Wrapper > .Image > img{
+        width: 100%;
+        height: 50px;
+    }
+    
+    .Wrapper > .Name{
+        width: 100%;
+        float: left;
+        font-size: 16px;
+        font-weight: bold;
+    }
+}

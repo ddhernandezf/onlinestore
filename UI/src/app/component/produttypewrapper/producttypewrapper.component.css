@@ -1,0 +1,82 @@
+.Type{
+    float: left;
+    width: 100%;
+    padding: 10px;
+    height: auto;
+    max-height: 500px;
+    overflow: auto;
+}
+
+.ButtonBar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 10px;
+}
+
+.ButtonBar > button{
+    border: solid transparent 2px;
+    margin: 0px 10px;
+    padding: 0;
+    background: none;
+}
+
+.ButtonBar > button:hover{
+    cursor: pointer;
+    border-bottom: solid #333333 2px;
+}
+
+.ButtonBar > button.Back > img{
+    height: 30px;
+}
+
+.ButtonBar > button.All{
+    font-size: 20px;
+    font-weight: bold;
+    color: #333333;
+}
+
+@media only screen and (min-width: 400px){}
+
+/*@media only screen and (max-width: 768px) and (orientation: landscpae){*/
+@media only screen and (min-width: 1000px){
+    .Type{
+        float: left;
+        width: 500px;
+        padding: 10px;
+        height: auto;
+        max-height: 500px;
+        overflow: auto;
+    }
+    
+    .ButtonBar {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        padding: 10px;
+    }
+    
+    .ButtonBar > button{
+        border: solid transparent 2px;
+        margin: 0px 10px;
+        padding: 0;
+        background: none;
+    }
+    
+    .ButtonBar > button:hover{
+        cursor: pointer;
+        border-bottom: solid #333333 2px;
+    }
+    
+    .ButtonBar > button.Back > img{
+        height: 30px;
+    }
+    
+    .ButtonBar > button.All{
+        font-size: 20px;
+        font-weight: bold;
+        color: #333333;
+    }
+}

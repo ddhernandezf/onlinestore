@@ -1,0 +1,71 @@
+<header>
+  <div class="Center">
+    <div class="Wrapper">
+      <div class="HeaderLeft">
+        <div class="ButtonMenu" (click)="MenuHandler.WakeUp()">
+          <img src="../../../assets/images/EnterpriseLogo.png" />
+          <span>Menu</span>
+        </div>
+      </div>
+      <div class="HeaderCenter">
+        <div class="ProductBrowser">
+          <button class="TypeButton" (click)="TypeHandler.WakeUp()">
+            <span>{{SelectedType.Name}}</span>
+          </button>
+          <input type="text" [(ngModel)]="ProductName"  (keydown)="SearchKeyPress($event)"/>
+          <button class="SearchButton" (click)="LoadProducts()">
+            <img src="../../../assets/images/Search.png">
+          </button>
+        </div>
+      </div>
+      <div class="HeaderRight">
+        <app-buy-cart-button (click)="BuyCartHandler.WakeUp()"></app-buy-cart-button>
+      </div>
+      <app-menu-bar [Show]=MenuHandler.Show
+          (MenuAction)="MenuHandler.Caller($event)" 
+          (CallAddingKid)="KidsHandler.Caller($event)"
+          (SaleRequestCaller)="SaleRequestHandler.Caller($event)"
+          (CallLoggedUser)="CatchCurrentUser($event)"
+          (CallCurrentChild)="CatchCurrentChild($event)"></app-menu-bar>
+    </div>
+  </div>
+</header>
+<div class="body">
+  <div class="Center">
+    <div class="Wrapper">
+        <app-item-wrapper [Products]=Products
+        (CallAction)=GetSelectedProduct($event)
+        (AddProductToCart)=AddToBuyCart($event)></app-item-wrapper>
+    </div>
+  </div>
+</div>
+<app-modal-window [Block]=BuyCartHandler.Show [Title]=BuyCartHandler.Title (CallAction)="BuyCartHandler.Caller($event)">
+  <app-buy-cart [Items]=BuyCartHandler.Data
+    [CurrentUser]=CurrentUser
+    [CurrentChild]=CurrentChild
+    (CloseModal)=BuyCartHandler.Caller(!$event)
+    (BlockWindow)=ManageBlockingWindow($event)
+    (ShowMessage)=ConfirmMessageHandler.Caller($event)></app-buy-cart>
+</app-modal-window>
+<app-modal-window [Block]=KidsHandler.Show [Title]=KidsHandler.Title (CallAction)="KidsHandler.Caller($event)">This is a test</app-modal-window>
+<app-modal-window [Block]=ConfirmMessageHandler.Show
+  [Title]=ConfirmMessageHandler.Title (CallAction)="ConfirmMessageHandler.Caller($event)">
+  <div>
+    Su compra ha sido realizada exitosamente <br><br>
+    Puede consultar el estado de su producto en el historial de compras en el menu.<br>
+    Su factura llegara a su correo electrónico registrado.
+  </div>
+</app-modal-window>
+<app-modal-window [Block]=TypeHandler.Show [Title]=TypeHandler.Title (CallAction)="TypeHandler.Caller($event)">
+  <app-product-type-wrapper [Block]=TypeHandler.Show (SelectingType)=GetSelectedType($event)></app-product-type-wrapper>
+</app-modal-window>
+<app-modal-window [Block]=SaleRequestHandler.Show [Title]=SaleRequestHandler.Title
+                  (CallAction)="SaleRequestHandler.Caller($event)">
+  <app-request-wrapper [ViewFlag]=SaleRequestHandler.Show
+                      [CurrentUser]=CurrentUser
+                      [CurrentChild]=CurrentChild></app-request-wrapper>
+</app-modal-window>
+<app-item-viewer [Product]=SelectedProduct
+                (CallAction)="CloseProductViewer($event)"
+                (AddProductToCart)=AddToBuyCart($event)></app-item-viewer>
+<app-blocker [Block]=StoreHandler.Show ></app-blocker>

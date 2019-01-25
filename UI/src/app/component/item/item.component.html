@@ -1,0 +1,25 @@
+<div class="Item">
+  <div class="Description">
+    <div class="Row Name">{{Product.Name}}</div>
+    <div class="Row Type">{{Product.Type.Name}}</div>
+  </div>
+  <div class="Image">
+    <img [src]="Product.Images[0]">
+  </div>
+  <div class="Buttons">
+    <div class="Left">
+      <a (click)="View()">Ver más</a>
+      <span>Q {{Product.Price}}</span>
+    </div>
+    <div class="Center">
+      <button (click)="More()">+</button>
+      <input type="number" [(ngModel)]="Product.Quantity">
+      <button (click)="Less()">-</button>
+    </div>
+    <div class="Right">
+      <button (click)="AddToCart()">
+        <img src="../../../assets/images/BuyCart.png">
+      </button>
+    </div>
+  </div>
+</div>

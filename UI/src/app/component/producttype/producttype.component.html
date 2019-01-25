@@ -1,0 +1,6 @@
+<div class="Wrapper" *ngIf="Type.Id !== null" (click)="Selecting(Type)" >
+    <div class="Image">
+        <img [src]="Type.Image">
+    </div>
+    <div class="Name">{{Type.Name}}</div>
+</div>

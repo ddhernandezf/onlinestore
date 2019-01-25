@@ -1,0 +1,105 @@
+.ItemWrapper{
+    float: left;
+    width: 100%;
+}
+
+.ItemWrapper > .Header{
+    float: left;
+    width: 100%;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    color: #333333;
+    border-bottom: solid 1px #333333;
+    padding: 5px;
+}
+
+.ItemWrapper > .Header.Selected{
+    background: #333333;
+    color: #ffffff;
+}
+
+.ItemWrapper > .Header:hover{
+    background: #333333;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.ItemWrapper > .Header >div{
+    float: left;
+}
+
+.ItemWrapper > .Header > .Date{
+    width: 60%;
+    text-align: left;
+}
+
+.ItemWrapper > .Header > .Ammount{
+    width: 35%;
+    text-align: right;
+    padding-right: 5px;
+}
+
+.ItemWrapper > .Header > .Action{
+    width: 5%;
+}
+
+.ItemWrapper > .Header > .Action > button{
+    background: none;
+    border: solid 2px transparent;
+    padding: 0;
+    margin: 0;
+    font-size: 13px;
+    font-weight: bolder;
+    width: 100%;
+}
+
+.ItemWrapper > .Header > .Action > button:hover{
+    cursor: pointer;
+    border-bottom: solid 2px #333333;
+}
+
+.ItemWrapper > .Content{
+    display: none;
+}
+
+.ItemWrapper > .Content.Selected{
+    display: inline-block;
+    width: 100%;
+    height: 350px;
+    max-height: 350px;
+    overflow-y: auto;
+}
+
+.TableWrapper{
+    display: inline-block;
+    width: 100%;
+    padding: 10px;
+}
+
+.Row{
+    width: 100%;
+    font-size: 15px;
+    font-weight: bolder;
+}
+
+.InfoBlock{
+    float: left;
+    width: 50%;
+    margin-top: 10px;
+    font-size: 12px;
+    padding: 5px;
+}
+
+.InfoBlock > .Title {
+    width: 100%;
+    text-align: center;
+    font-weight: bolder;
+    padding-bottom: 3px;
+}
+
+.InfoBlock > .DataWrapper {
+    display: inline-block;
+    width: 100%;
+    text-align: left;
+}

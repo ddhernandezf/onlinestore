@@ -1,0 +1,210 @@
+.RegisterBox{
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(255,255,255,.7), rgba(255,255,255,.7)), url("../../../assets/images/RegisterBackground.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.RegisterBox>.Header{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 10%;
+    border-bottom: solid 1px;
+    background: rgba(51, 51, 51, .8);
+    color: white;
+    font-weight: bolder;
+}
+
+
+.RegisterBox>.Header > .ApplicationName{
+    display: table-cell;
+    float: left;
+    width: 80%;
+    padding: 5px;
+}
+
+.RegisterBox>.Header > img{
+    width: 25%;
+    float: left;
+    padding: 0px 15px;
+}
+
+.RegisterBox>.Body{
+    display: inline-block;
+    width: 100%;
+    height: 90%;
+    overflow: hidden;
+}
+
+.RegisterBox>.Body>form{
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.RegisterBox>.Body>form>.FieldWrapper{
+    float: left;
+    width: 100%;
+    height: 75%;
+    overflow: auto;
+}
+
+.RegisterBox input[type="text"].HintField,
+.RegisterBox input[type="password"].HintField,
+.RegisterBox input[type="number"].HintField,
+.RegisterBox input[type="email"].HintField{
+    background-color: #ffffff;
+    border: none;
+    width: 100%;
+    height: 40px;
+}
+
+.RegisterBox input[type="text"].HasError,
+.RegisterBox input[type="password"].HasError,
+.RegisterBox input[type="email"].HasError,
+.RegisterBox input[type="number"].HasError{
+    border: solid 2px rgb(204, 0, 0) !important;
+    color: rgb(204, 0, 0);
+}
+
+.RegisterBox input[type="text"]:focus,
+.RegisterBox input[type="password"]:focus{
+    border: solid 2px rgba(51, 51, 51, .8);
+    outline: none;
+}
+
+.RegisterBox label{
+    float: left;
+    margin: 7px 10px;
+    font-size: 13px;
+    font-weight: bolder;
+}
+
+.RegisterBox button{
+    color: #ffffff;
+    background: rgba(51, 51, 51, .8);
+    border: none;
+    margin: 5px;
+    padding: 10px 15px;
+}
+
+.RegisterBox button:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.RegisterBox a{
+    text-decoration: none;
+    color: #000000;
+}
+
+.RegisterBox a:hover{
+    text-decoration: underline;
+}
+
+.RegisterBox .Register{
+    display: inline-block;
+    width: 100%;
+    text-align: right;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.RegisterBox .GeneralError{
+    color: rgb(204, 0, 0);
+    text-align: center;
+}
+
+.col-4 {
+    width: 33.33%;
+}
+
+.col-8 {
+    width: 66.66%;
+}
+
+
+@media only screen and (min-width: 400px){
+    /********************AllInCenter********************/
+    .AllInCenter{
+        display: table;
+        width: inherit;
+        height: inherit;
+    }
+
+    .AllInCenter.GrayBackground{
+        background: rgba(242, 242, 242, 0.5);
+    }
+
+    .AllInCenter > .Wrapper{
+        display: table-cell;
+        width: inherit;
+        height: inherit;
+        vertical-align: middle;
+        text-align: center;
+    }
+    /********************AllInCenter********************/
+    
+    .RegisterBox{
+        display: inline-block;
+        width: 90%;
+        margin: 0 auto;
+        height: auto;
+        max-height: 600px;
+    }
+    
+    .RegisterBox>.Body{
+        display: inline-block;
+        width: 100%;
+        height: 500px;
+        padding: 20px;
+    }
+    
+    .RegisterBox>.Body>form{
+        margin: 0 auto;
+    }
+
+    .RegisterBox>.Body>form > .FieldWrapper{
+        float: left;
+        height: 85%;
+    }
+
+    [class*="col-"].ButtonPanel{
+        height: auto;
+    }
+}
+
+@media only screen and (min-width: 1000px){
+    .RegisterBox{
+        display: inline-block;
+        width: 500px;
+        margin: 0 auto;
+        height: auto;
+        max-height: 850px;
+    }
+    
+    .RegisterBox>.Body{
+        display: inline-block;
+        width: 100%;
+        height: 763px;
+        padding: 20px;
+    }
+    
+    .RegisterBox>.Body>form{
+        margin: 0 auto;
+    }
+
+    .RegisterBox>.Body>form > .FieldWrapper{
+        float: left;
+        height: 85%;
+    }
+
+    [class*="col-"].ButtonPanel{
+        height: auto;
+    }
+}

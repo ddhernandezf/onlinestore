@@ -1,0 +1,43 @@
+<div class="AllInCenter GrayBackground">
+    <div class="Wrapper">
+        <div class="LoginBox">
+            <div class="Header">
+                <img src="assets/images/EnterpriseLogo.png">
+                <span class="ApplicationName">{{Properties.EnterpriseName}}</span>
+            </div>
+            <div class="Body">
+                <form [formGroup]="LoginForm" (ngSubmit)="Submit()">
+                    <div class="col-12 Field">
+                        <input type="email"
+                               formControlName="User"
+                               class="HintField LoginUser"
+                               [ngClass]="{ 'HasError': Submitted && f.User.errors }"
+                               placeholder="Ingrese su usuario" />
+                        <div *ngIf="Submitted && f.User.errors" class="Error">
+                            <span *ngIf="f.User.errors.required">*</span>
+                            <span *ngIf="f.User.errors.email">Formato incorrecto</span>
+                        </div>
+                    </div>
+                    <div class="col-12 Field">
+                        <input type="password"
+                               formControlName="Password"
+                               class="HintField LoginPassword"
+                               [ngClass]="{'HasError': Submitted && f.Password.errors}"
+                               placeholder="Ingrese su contraseña" />
+                        <div *ngIf="Submitted && f.Password.errors" class="Error">
+                            <span *ngIf="f.Password.errors.required">*</span>
+                            <span *ngIf="f.Password.errors.minlength">Mínimo 6 caracteres</span>
+                        </div>
+                    </div>
+                    <div class="col-12 ButtonPanel">
+                        <button>Ingresar</button>
+                        <br *ngIf="Properties.ErrorMessage !== null">
+                        <div class="GeneralError" *ngIf="Properties.ErrorMessage !== null">{{Properties.ErrorMessage}}</div>
+                    </div>
+                </form>
+                <span class="Register"><a routerLink="/Registro">Registrate aquí</a></span>
+            </div>
+        </div>
+    </div>
+</div>
+<app-blocker [Block]=BlockView ></app-blocker>

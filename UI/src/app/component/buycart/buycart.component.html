@@ -1,0 +1,206 @@
+<form name="frmCart" (ngSubmit)="f.form.valid && Submit()" #f="ngForm" novalidate>
+  <div class="Tab">
+    <div class="Header">
+      <button type="button" [ngClass]="{'Show': !IsPayment}" (click)="ChangeTab(false)"  >
+        <img src="../../../assets/images/BuyCart.png">
+        <span>Artículos</span>
+      </button>
+      <button type="button" [ngClass]="{'Show': IsPayment}" (click)="ChangeTab(true)" >
+        <img src="../../../assets/images//Payment.png">
+        <span>Pago</span>
+      </button>
+      <button class="Buy" >
+        Comprar
+      </button>
+    </div>
+    <div class="Content" [ngClass]="{'Show': !IsPayment}">
+      <div class="Cart">
+        <div class="Rows">
+          <div class="Row" *ngFor="let product of Cart.Products">
+            <div class="Product">
+              <img [src]="product.Images[0]">
+              <div>
+                <div class="Name">{{product.Name}}</div>
+                <div class="Type">{{product.Type.Name}}</div>
+              </div>
+            </div>
+            <div class="Money">
+              <div>
+                  <div class="Price">Q {{product.Price}}</div>
+                  <div class="Quantity">
+                    <button type="button" (click)="More(product)">+</button>
+                    <input type="number" [(ngModel)]="product.Quantity" [ngModelOptions]="{standalone: true}">
+                    <button type="button" (click)="Less(product)">-</button>
+                  </div>
+              </div>
+              <div class="Total">Q{{product.Quantity * product.Price}}</div>
+            </div>
+            <div class="Delete" (click)="Delete(product)">
+              <button type="button">
+                <img src="../../../assets/images/Delete.png">
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="Footer">Total: Q {{Cart.TotalAmmout}}</div>
+      </div>
+    </div>
+    <div class="Content" [ngClass]="{'Show': IsPayment}">
+      <div class="Payment">
+        <div class="Block">
+          <div class="col-12 Title">DATOS DE TARJETA</div>
+          <div class="col-12 Field">
+            <input type="text"
+              name="txtCardName"    
+              class="HintField Firstname"
+              placeholder="Nombres"
+              [ngClass]="{ 'HasError': f.submitted && txtCompleteName.invalid }"
+              [(ngModel)]="Cart.Customer.CardName"
+              #txtCardName="ngModel"
+              [pattern]="RegEx.CompleteName"
+              minlength="5"
+              maxlength="120"
+              required>
+              <div *ngIf="f.submitted && txtCardName.invalid" class="Error">
+                <span *ngIf="txtCardName.errors.required">*</span>
+                <span *ngIf="txtCardName.errors.minlength">Mínimo 5 caracteres</span>
+                <span *ngIf="txtCardName.errors.maxlength">Máxmimo 120 caracteres</span>
+                <span *ngIf="txtCardName.errors?.pattern">Un nombre y un apellido</span>
+              </div>
+        </div>
+          <div class="col-12 Field CreditCards">
+            <img *ngFor="let creditcard of CreditCards" 
+                  [ngClass]="{'Selected': Cart.Customer.CreditHouse === creditcard}" 
+                  [src]="creditcard.Image"
+                  (click)="SelectCreditCard(creditcard)">
+          </div>
+          <div class="col-12 Field">
+            <input  type="number"
+                    name="txtCreditCard"
+                    class="HintField CreditCard"
+                    [ngClass]="{ 'HasError': f.submitted && txtCreditCard.invalid }"
+                    [(ngModel)]="Cart.Customer.CardNumber"
+                    #txtCreditCard="ngModel"
+                    [pattern]="RegEx.CreditCard.Current"
+                    placeholder="Número de tarjeta"
+                    required>
+            <div *ngIf="f.submitted && txtCreditCard.invalid" class="Error">
+              <span *ngIf="txtCreditCard.errors.required">*</span>
+              <span *ngIf="txtCreditCard.errors?.pattern">Tarjeta inválida</span>
+            </div>
+          </div>
+          <div class="col-12 Field Date">
+            <label>Vencimiento tarjeta</label>
+            <div>
+              <input  type="number"
+                name="txtExpireMonth"
+                class="HintField Date"
+                [ngClass]="{ 'HasError': f.submitted && txtExpireMonth.invalid }"
+                [(ngModel)]="Cart.Customer.ExpireMont"
+                #txtExpireMonth="ngModel"
+                placeholder="Mes"
+                minlength="1"
+                maxlength="2"
+                required>
+                <div *ngIf="f.submitted && txtExpireMonth.invalid" class="Error">
+                  <span *ngIf="txtExpireMonth.errors.required">*</span>
+                  <span *ngIf="txtExpireMonth.errors.minlength">2 dígitos</span>
+                  <span *ngIf="txtExpireMonth.errors.maxlength">2 dígitos</span>
+                </div>
+            </div>
+            <div>
+              <input  type="number"
+                name="txtExpireYear"
+                class="HintField Date"
+                [ngClass]="{ 'HasError': f.submitted && txtExpireYear.invalid }"
+                [(ngModel)]="Cart.Customer.ExpireYear"
+                #txtExpireYear="ngModel"
+                placeholder="Año"
+                minlength="4"
+                maxlength="4"
+                required>
+                <div *ngIf="f.submitted && txtExpireYear.invalid" class="Error">
+                  <span *ngIf="txtExpireYear.errors.required">*</span>
+                  <span *ngIf="txtExpireYear.errors.minlength">4 dígitos</span>
+                  <span *ngIf="txtExpireYear.errors.maxlength">4 dígitos</span>
+                </div>
+            </div>
+          </div>
+          <div class="col-12 Field Date">
+            <label>VCC</label>
+            <div>
+                <input type="number"
+                name="txtVCC"
+                class="HintField CreditVerify"
+                placeholder="Código verificación"
+                [ngClass]="{ 'HasError': f.submitted && txtVCC.invalid }"
+                [(ngModel)]="Cart.Customer.VCC"
+                #txtVCC="ngModel"
+                minlength="4"
+                maxlength="4"
+                required>
+                <div *ngIf="f.submitted && txtVCC.invalid" class="Error">
+                  <span *ngIf="txtVCC.errors.required">*</span>
+                  <span *ngIf="txtVCC.errors.minlength">4 dígitos</span>
+                  <span *ngIf="txtVCC.errors.maxlength">4 dígitos</span>
+                </div>
+            </div>
+          </div>
+        </div>
+        <div class="Block">
+          <div class="col-12 Title">DATOS DE FACTURA</div>
+          <div class="col-8 Field">
+              <input type="text"
+                name="txtCompleteName"    
+                class="HintField Firstname"
+                placeholder="Nombres"
+                [ngClass]="{ 'HasError': f.submitted && txtCompleteName.invalid }"
+                [(ngModel)]="Cart.Customer.CompleteName"
+                #txtCompleteName="ngModel"
+                [pattern]="RegEx.CompleteName"
+                minlength="5"
+                maxlength="120"
+                required>
+                <div *ngIf="f.submitted && txtCompleteName.invalid" class="Error">
+                  <span *ngIf="txtCompleteName.errors.required">*</span>
+                  <span *ngIf="txtCompleteName.errors.minlength">Mínimo 5 caracteres</span>
+                  <span *ngIf="txtCompleteName.errors.maxlength">Máxmimo 120 caracteres</span>
+                  <span *ngIf="txtCompleteName.errors?.pattern">Un nombre y un apellido</span>
+                </div>
+          </div>
+          <div class="col-4 Field">
+            <input type="text"
+              name="txtTax"    
+              class="HintField Tax"
+              placeholder="Nit"
+              [ngClass]="{ 'HasError': f.submitted && txtTax.invalid }"
+              [(ngModel)]="Cart.Customer.TaxNumber"
+              #txtTax="ngModel"
+              required>
+              <div *ngIf="f.submitted && txtTax.invalid" class="Error">
+                  <span *ngIf="txtTax.errors.required">*</span>
+                </div>
+          </div>
+          <div class="col-12 Field">
+              <input type="text"
+                name="txtAddress"    
+                class="HintField Address"
+                placeholder="Direccion"
+                [ngClass]="{ 'HasError': f.submitted && txtAddress.invalid }"
+                [(ngModel)]="Cart.Customer.Address"
+                #txtAddress="ngModel"
+                maxlength="250"
+                required>
+                <div *ngIf="f.submitted && txtAddress.invalid" class="Error">
+                    <span *ngIf="txtAddress.errors.required">*</span>
+                    <span *ngIf="txtAddress.errors.maxlength">Máxmimo 250 caracteres</span>
+                  </div>
+          </div>
+          <div class="col-12 Field" *ngIf="GeneralError !== null" >
+              <div style="color: rgb(204, 0, 0);">{{GeneralError}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

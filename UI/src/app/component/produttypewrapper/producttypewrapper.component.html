@@ -1,0 +1,10 @@
+<div class="Type">
+    <app-product-type *ngFor="let type of Types" [Type]=type (SelectingType)=SelectType($event)></app-product-type>
+</div>
+<div class="ButtonBar" *ngIf="Parent.Id !== null">
+    <button class="Back" (click)="GoBack()">
+        <img src="../../../assets/images/GoBack.png">
+    </button>
+    <button class="All" (click)="All()">Todos</button>
+    <button class="All" (click)="SelectParent()">Seleccionar</button>
+</div>

@@ -1,0 +1,7 @@
+<div class="SaleWrapper">
+    <app-request-header *ngFor="let item of Data"
+        [HeaderItem]=item></app-request-header>
+        <div *ngIf="Data.length === 0">
+            No hay registros
+        </div> 
+</div>
